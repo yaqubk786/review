@@ -1,5 +1,7 @@
 /* Basic Reset */
-body, html, #root {
+body,
+html,
+#root {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -13,7 +15,6 @@ body, html, #root {
 
 /* Sidebar */
 .sidebar {
-  background-color: #f3f3f3;
   width: 250px;
   height: 100%;
   overflow-y: auto;
@@ -22,6 +23,23 @@ body, html, #root {
   left: 0;
   top: 0;
   z-index: 1000;
+  background-image: linear-gradient(
+    180deg,
+    hsl(240deg 100% 20%) 0%,
+    hsl(270deg 100% 21%) 18%,
+    hsl(286deg 100% 21%) 26%,
+    hsl(301deg 100% 21%) 33%,
+    hsl(313deg 100% 26%) 39%,
+    hsl(322deg 100% 30%) 44%,
+    hsl(329deg 100% 35%) 50%,
+    hsl(335deg 100% 38%) 56%,
+    hsl(339deg 100% 42%) 61%,
+    hsl(344deg 100% 44%) 67%,
+    hsl(348deg 100% 47%) 74%,
+    hsl(352deg 100% 49%) 82%,
+    hsl(0deg 100% 50%) 100%
+  );
+  color: white;
 }
 
 .sidebar.closed {
@@ -33,7 +51,7 @@ body, html, #root {
 }
 
 .sidebar-content {
-  padding: 20px;
+  padding: 20px 0 20px 0;
 }
 
 .sidebar h2 {
@@ -46,12 +64,19 @@ body, html, #root {
 }
 
 .sidebar li {
-  padding: 10px 0;
   cursor: pointer;
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-
+.sidebar ul li span {
+  font-size: 18px;
+}
 .sidebar li:hover {
   color: #007bff;
+  background-color: white;
 }
 
 /* Main content */
@@ -89,6 +114,10 @@ body, html, #root {
   padding: 20px;
 }
 
+.leftBox img {
+  height: 100px;
+  margin-left: 40px;
+}
 /* Responsive Behavior */
 @media screen and (max-width: 768px) {
   .main-content.sidebar-visible {
@@ -107,5 +136,49 @@ body, html, #root {
 
   .sidebar.open {
     transform: translateX(0);
+  }
+  .header {
+    flex-direction: row-reverse;
+  }
+  .leftBox img {
+    height: 200px;
+    margin-left: 40px;
+  }
+  .sidebar ul li {
+    font-size: 20px;
+    padding: 20px 20px 20px 50px;
+    gap: 15px;
+  }
+  .sidebar ul span {
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 608px) {
+  .leftBox ul {
+    overflow-y: auto;
+    display: block;
+    white-space: nowrap;
+    height: 490px;
+    /* background-color: black; */
+  }
+
+  .leftBox ul::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .leftBox ul::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .leftBox ul::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  .leftBox ul::-webkit-scrollbar-thumb:hover {
+    background-color: #ccc;
   }
 }
