@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Sidebar from "./components/SideBar";
+import Header from "./components/Header";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Sidebar isOpen={sidebarOpen} />
+      <div className={`main-content ${sidebarOpen ? "sidebar-visible" : ""}`}>
+        <Header toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
+        <div className="content">
+          <h1>Welcome to Dashboard</h1>
+          <p>This is your main content area.</p>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

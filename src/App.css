@@ -1,38 +1,111 @@
-.App {
-  text-align: center;
+/* Basic Reset */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+  display: flex;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Sidebar */
+.sidebar {
+  background-color: #f3f3f3;
+  width: 250px;
+  height: 100%;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sidebar.closed {
+  transform: translateX(-100%);
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar-content {
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar li {
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.sidebar li:hover {
+  color: #007bff;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  margin-left: 0;
+  transition: margin-left 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
+}
+
+.main-content.sidebar-visible {
+  margin-left: 250px;
+}
+
+/* Header */
+.header {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 20px;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.menu-btn {
+  font-size: 24px;
+  margin-right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Content Area */
+.content {
+  padding: 20px;
+}
+
+/* Responsive Behavior */
+@media screen and (max-width: 768px) {
+  .main-content.sidebar-visible {
+    margin-left: 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+  }
+
+  .sidebar.closed {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
   }
 }
