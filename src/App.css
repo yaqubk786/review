@@ -99,7 +99,11 @@ html,
   padding: 10px 20px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
 }
+
+
 
 .menu-btn {
   font-size: 24px;
@@ -108,7 +112,78 @@ html,
   border: none;
   cursor: pointer;
 }
+.toggle-btn {
+  font-size: 14px;
+  background-color: #299cdb;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  gap: 5px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
 
+/* ---topbar */
+.topbox {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+}
+.socialIcons {
+  display: flex;
+  gap: 20px;
+}
+.top-header .topbox .activeBox,
+.top-header .topbox .timeBox {
+  padding: 10px 30px;
+  border: 1px solid #abb0ba;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  white-space: nowrap;
+  position: relative;
+}
+.top-header .topbox .activeBox::before {
+  content: " ";
+  height: 8px;
+  width: 8px;
+  background-color: green;
+  position: absolute;
+  border-radius: 50%;
+  top: -2px;
+  right: -4px;
+}
+
+.socialIcons .icons {
+  height: 50px;
+  width: 50px;
+  background-color: blanchedalmond;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.socialIcons > *:not(:last-child)::before {
+  content: " ";
+  height: 8px;
+  width: 8px;
+  background-color: red;
+  position: absolute;
+  border-radius: 50%;
+  top: 3px;
+  right: 4px;
+}
+.userBox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+/* ---topbar */
 /* Content Area */
 .content {
   padding: 20px;
@@ -127,7 +202,7 @@ html,
   .sidebar {
     position: fixed;
     top: 0;
-    height: 100vh;
+    /* height: 100vh; */
   }
 
   .sidebar.closed {
@@ -151,6 +226,14 @@ html,
   }
   .sidebar ul span {
     font-size: 20px !important;
+  }
+  .header {
+    flex-direction: column;
+  }
+  .toggle-btn {
+    margin-bottom: 10px;
+    margin-left: auto;
+    font-size: 20px;
   }
 }
 
