@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Sidebar from "./components/SideBar";
 import Header from "./components/Header";
+import Body from "./components/Body";
 import "./App.css";
 
 const App = () => {
@@ -10,10 +11,9 @@ const App = () => {
     <div className="app">
       <Sidebar isOpen={sidebarOpen} />
       <div className={`main-content ${sidebarOpen ? "sidebar-visible" : ""}`}>
-        <Header toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
+        <Header toggleSidebar={() => setSidebarOpen(!sidebarOpen)} sidebarOpen={sidebarOpen}/>
         <div className="content">
-          <h1>Welcome to Dashboard</h1>
-          <p>This is your main content area.</p>
+          <Body/>
         </div>
       </div>
     </div>

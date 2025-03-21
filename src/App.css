@@ -99,11 +99,12 @@ html,
 /* Header */
 .header {
   background-color: #fff;
-  border-bottom: 1px solid #ccc;
   padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0 10px 25px #38414a26;
+  margin-bottom: 30px;
 }
 
 .menu-btn {
@@ -184,16 +185,218 @@ html,
   align-items: center;
   gap: 5px;
 }
+
+.header .topbox .activeBox,
+.header .topbox .timeBox {
+  padding: 10px 10px;
+  border: 1px solid #abb0ba;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  white-space: nowrap;
+  position: relative;
+}
+
+.header .topbox .activeBox::before {
+  content: " ";
+  height: 8px;
+  width: 8px;
+  background-color: green;
+  position: absolute;
+  border-radius: 50%;
+  top: -2px;
+  right: -4px;
+}
 /* ---topbar */
 /* Content Area */
 .content {
-  padding: 20px;
+  padding: 30px;
 }
 
 .leftBox img {
   height: 100px;
   margin-left: 40px;
 }
+
+.content h2 {
+  margin-bottom: 20px;
+  border-bottom: 2px solid blue;
+  width: 10%;
+  position: absolute;
+}
+
+.leadBox {
+  display: flex;
+  border: 1px solid none;
+  gap: 30px;
+  /* box-shadow:  0 10px 25px #38414a26; */
+  position: relative;
+}
+.leadNavs {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px 10px 20px;
+  border-bottom: 1px solid lightgrey;
+}
+.leadNavs div:first-child {
+  border-bottom: 2px solid blue;
+}
+.leadBox .firstBox {
+  width: 70%;
+  margin: 75px 0 0;
+}
+.leadBox .firstBox,
+.leadBox .secondBox {
+  /* background-color: aqua; */
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+  /* padding: 20px; */
+  border-radius: 4px;
+}
+.secondBox {
+  width: 30%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.secondBox .head {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.secondBox .nums {
+  font-size: 20px;
+}
+.navContent {
+  padding: 20px;
+}
+
+/* --------table------------ */
+
+.tableNavContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.tableNavContainer .leftTableNav,
+.tableNavContainer .rightTableNav {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  cursor: pointer;
+}
+.leftTableNav > *:nth-child(n + 2) {
+  background-color: white;
+  padding: 10px 20px;
+  border: 1px solid #abb0ba;
+  border-radius: 4px;
+}
+.rightTableNav > *:nth-child(n + 2) {
+  background-color: white;
+  padding: 10px 20px;
+  border: 1px solid blue;
+  color: blue;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.rightTableNav div:first-child {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+.tableBodyBox {
+  margin-top: 25px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  overflow-x: auto;
+}
+.tableFilters {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 5px 5px 10px;
+}
+.tableFilters .leftBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.tableFilters .rightBox {
+  display: flex;
+  gap: 10px;
+}
+.tableFilters .rightBox {
+  padding: 10px 20px;
+  background-color: #a9eaff;
+}
+.tableFilters .rightBox input {
+  border: none;
+  background-color: #a9eaff;
+  margin-left: 5px;
+}
+.tableFilters .rightBox input:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+.tableFilters .rightBox div:last-child {
+  border-left: 1px solid #abb0ba;
+}
+.rightBox div {
+  display: flex;
+  align-items: center;
+}
+.rightBox div:first-child span {
+  display: inline-flex;
+  margin-left: 5px;
+}
+.rightBox div:last-child span {
+  margin-left: 5px;
+}
+.dataTable {
+  width: 100%;
+}
+.dataTable,
+th,
+td {
+  /* border: 1px solid black; */
+  border-collapse: collapse;
+}
+.dataTable tr th,
+.dataTable tr td {
+  padding: 10px;
+  white-space: nowrap;
+}
+.dataTable tr th {
+  background-color: blue;
+  color: white;
+  text-align: left;
+}
+.dataTable tr {
+  border-bottom: 1px solid #ddd;
+}
+.dataTable .statusBox {
+  display: flex;
+  gap: 5px;
+}
+.dataTable .statusBox div {
+  border: 2px solid lightgreen;
+  padding: 5px 5px;
+  border-radius: 20px;
+  color: lightgreen;
+  font-size: 14px;
+}
+/* --------table------------ */
 /* Responsive Behavior */
 @media screen and (max-width: 768px) {
   .main-content.sidebar-visible {
@@ -213,12 +416,12 @@ html,
   .sidebar.open {
     transform: translateX(0);
   }
-  .header {
+  /* .header {
     flex-direction: row-reverse;
-  }
+  } */
   .leftBox img {
     height: 200px;
-    margin-left: 40px;
+    margin-left: 28px;
   }
   .sidebar ul li {
     font-size: 20px;
@@ -230,6 +433,7 @@ html,
   }
   .header {
     flex-direction: column;
+    margin-bottom: 10px;
   }
   .toggle-btn {
     margin-bottom: 8px;
@@ -240,6 +444,87 @@ html,
   .topbox {
     gap: 14px;
     font-size: 14px;
+  }
+  .header .topbox .activeBox,
+  .header .topbox .timeBox {
+    padding: 5px 8px;
+    height: auto;
+  }
+  .socialIcons {
+    gap: 15px;
+  }
+  .socialIcons .icons {
+    height: 30px;
+    width: 30px;
+  }
+  .socialIcons > *:not(:last-child)::before {
+    top: 0;
+    right: 0;
+  }
+  .content-body h2 {
+    display: none;
+  }
+  .leadBox {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .leadBox .firstBox {
+    margin-top: 0;
+    width: 100%;
+  }
+  .leadBox .secondBox {
+    margin-bottom: 0;
+    width: 100%;
+    padding: 10px;
+    font-size: 30px;
+  }
+
+  .content h2 {
+    display: none;
+  }
+  .content {
+    padding: 20px;
+  }
+
+  .leftTableNav {
+    margin-bottom: 15px;
+  }
+  .tableNavContainer .leftTableNav,
+  .tableNavContainer .rightTableNav {
+    justify-content: center;
+    font-size: 14px;
+  }
+  .leftTableNav > *:nth-child(n + 2),
+  .rightTableNav > *:nth-child(n + 2),
+  .rightTableNav div:first-child {
+    padding: 5px 10px;
+    white-space: nowrap;
+  }
+  .tableBodyBox {
+    margin-top: 40px;
+  }
+  .dataTable,
+  th,
+  td {
+    font-size: 13px;
+  }
+  .dataTable .statusBox div {
+    padding: 3px 3px;
+    font-size: 12px;
+  }
+  .tableFilters .leftBox {
+    margin-right: 8px;
+    gap: 6px;
+    font-size: 12px;
+  }
+  .tableFilters .rightBox {
+    font-size: 13px;
+  }
+}
+@media screen and (min-width: 879px) {
+  .header .topbox .activeBox,
+  .header .topbox .timeBox {
+    padding: 10px 30px;
   }
 }
 
@@ -269,5 +554,35 @@ html,
 
   .leftBox ul::-webkit-scrollbar-thumb:hover {
     background-color: #ccc;
+  }
+}
+
+@media (max-width: 1100px) {
+  .tableNavContainer {
+    flex-direction: column;
+    margin-top: 30px;
+    align-items: center;
+  }
+  .leftTableNav {
+    margin-bottom: 15px;
+  }
+  .topbox {
+    gap: 15px;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .leadNavs {
+    padding: 10px;
+    justify-content: start;
+    flex-wrap: wrap;
+  }
+  .leadNavs div {
+    font-size: 15px;
+    margin: 0 10px 10px 10px;
+  }
+}
+@media (min-width: 768px) {
+  .toggle-btn {
+    margin-right: 5px;
   }
 }

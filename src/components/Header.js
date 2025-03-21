@@ -1,9 +1,9 @@
 import React from "react";
 import "../App.css";
-// import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 import TopBar from "./TopBar";
-const Header = ({ toggleSidebar }) => {
+const Header = ({ toggleSidebar, sidebarOpen }) => {
   return (
     // <div className="header">
     //   <button className="menu-btn" onClick={toggleSidebar}>
@@ -12,18 +12,18 @@ const Header = ({ toggleSidebar }) => {
     // </div>
     <header className="header">
       <button className="toggle-btn" onClick={toggleSidebar}>
-        {/* {isNavOpen ? (
-        <>
-          <FaArrowLeft /> Hide Sidebar
-        </>
-      ) : (
-        <>
-          {" "}
-          <FaArrowRight /> Show Sidebar{" "}
-        </>
-      )} */}
-        <FaArrowRight />
-        Show Sidebar
+        {sidebarOpen ? (
+          <>
+            <FaArrowLeft /> Hide
+          </>
+        ) : (
+          <>
+            {" "}
+            <FaArrowRight /> Show{" "}
+          </>
+        )}
+        {/* <FaArrowRight />
+        Show  */}
       </button>
       <TopBar />
     </header>
