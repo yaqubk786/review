@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-import { FaArrowLeft } from "react-icons/fa";
+// import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 import TopBar from "./TopBar";
 const Header = ({ toggleSidebar }) => {
