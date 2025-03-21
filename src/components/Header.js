@@ -11,8 +11,8 @@ const Header = ({ toggleSidebar }) => {
     //   </button>
     // </div>
     <header className="header">
-    <button className="toggle-btn" onClick={toggleSidebar}>
-      {/* {isNavOpen ? (
+      <button className="toggle-btn" onClick={toggleSidebar}>
+        {/* {isNavOpen ? (
         <>
           <FaArrowLeft /> Hide Sidebar
         </>
@@ -22,11 +22,11 @@ const Header = ({ toggleSidebar }) => {
           <FaArrowRight /> Show Sidebar{" "}
         </>
       )} */}
-    <FaArrowRight />
-    Show Sidebar
-    </button>
-    <TopBar/>
-  </header>
+        <FaArrowRight />
+        Show Sidebar
+      </button>
+      <TopBar />
+    </header>
   );
 };
 
