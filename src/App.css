@@ -105,6 +105,10 @@ html,
   justify-content: space-between;
   box-shadow: 0 10px 25px #38414a26;
   margin-bottom: 30px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 99;
 }
 
 .menu-btn {
@@ -442,7 +446,7 @@ td {
     padding: 6px;
   }
   .topbox {
-    gap: 14px;
+    gap: 16px;
     font-size: 14px;
   }
   .header .topbox .activeBox,
